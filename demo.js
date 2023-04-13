@@ -21,7 +21,7 @@ async function main() {
             valueInputOption: 'USER_ENTERED',
             resource: {
                 values: {
-                    values: ['John', 'Doe', 42]
+                    values: ['Ali', 'Elzein', 300]
                 }
             },
         }).data
@@ -35,42 +35,41 @@ async function main() {
     // try {
     //     const res = await sheets.spreadsheets.batchUpdate({
     //         spreadsheetId: spreadsheetId,
-    //         resource: {
-    //             requests: [
-    //                 {
-    //                     updateCells: {
-    //                         range: {
-    //                           sheetId: sheetId, // The ID of the sheet containing the cell to format
-    //                           startRowIndex: 0, // The row index of the cell to format
-    //                         //   endRowIndex: -1, // The end row index of the cell to format
-    //                           startColumnIndex: 0, // The column index of the cell to format
-    //                         //   endColumnIndex: -1 // The end column index of the cell to format
-    //                         },
-    //                         filterCriteria: {
-    //                             condition: {
-    //                                 type: "TEXT_EQ",
-    //                                 values: [{ userEnteredValue: "John" }]
-    //                             }
-    //                         },
-    //                     },
-    //                     rows: [
-    //                         {
-    //                             values: [
-    //                                 {
-    //                                     userEnteredFormat: {
-    //                                         // Specify the formatting options here
-    //                                         backgroundColor: { red: 0.8, green: 0.8, blue: 0.8 },
-    //                                         horizontalAlignment: 'CENTER',
-    //                                         textFormat: { fontSize: 12, bold: true }
+    //         requests: [
+    //             {
+    //                 "rows": [
+    //                     {
+    //                         values: [
+    //                             {
+    //                                 userEnteredFormat: {
+    //                                     backgroundColor: {
+    //                                         red: 0.8,
+    //                                         green: 0.8,
+    //                                         blue: 0.8,
+    //                                         alpha: 1
     //                                     }
     //                                 }
-    //                             ]
-    //                         }
-    //                     ],
-    //                     fields: 'userEnteredFormat' // Only update the formatting
+    //                             }
+    //                         ]
+    //                     }
+    //                 ],
+    //                 "fields": "*",
+    //                 // Union field area can be only one of the following:
+    //                 "start": {
+    //                     "sheetId": sheetId,
+    //                     "rowIndex": 0,
+    //                     "columnIndex": 0
+    //                 },
+    //                 "range": {
+    //                     "sheetId": sheetId,
+    //                     "startRowIndex": 0,
+    //                     "endRowIndex": 0,
+    //                     "startColumnIndex": 1,
+    //                     "endColumnIndex": 1
     //                 }
-    //             ]
-    //         }
+    //             }
+    //         ]
+    //         // End of list of possible types for union field area.
     //     }).data
     //     console.log('Row format rule applied');
     // } catch (err) {
